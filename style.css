@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2');
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family:'Times New Roman', Times, serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 120px;
+    background: #11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 25px;
+    color: #eee01f;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+nav a:hover,
+nav a.active {
+    color: #eee01f;
+}
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1f242d;
+    font-size: 100px;
+    color: #fff;
+    font-weight: 700;
+}
+section:nth-child(odd) {
+    background: #323946;
+}
+.home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('coin.jpg');
+  background-size: cover;
+  background-position:initial;
+  background-repeat: no-repeat;
+  font-size: 100px;
+  color: #fff;
+  font-weight: 700;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 120px;
+}
+body {
+    background-image: url('coin.jpg');
+    background-size: cover;
+    background-position:initial;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Times New Roman', Times, serif;
+  }
+.home-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 120px;
+  color: #000000;
+}
+
+.home-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  font-size: 24px;
+  color: #11141a;
+  background-color: #eee01f;
+  padding: 10px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #d6c80e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

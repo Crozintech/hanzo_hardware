@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <style>
+      header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    padding: 20px 120px;
+    background: #11141a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 25px;
+    color: #eee01f;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+nav a:hover,
+nav a.active {
+    color: #eee01f;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-image: url('construction-site-silhouettes.jpg');
+    background-color: #ce9f3a;
+    height: 100vh;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.stars {
+  display: inline-block;
+}
+
+.stars input[type="radio"] {
+  display: none;
+}
+
+.stars label {
+  display: inline-block;
+  background: url('star.png') no-repeat;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.stars input[type="radio"]:checked ~ label {
+  background-position: 0 -20px;
+}
+    </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Hanzo Online Hardware Store</a>
+    <nav>
+        <a href="index.html#home-section">Home</a>
+        <a href="about.html#about-section">About</a>
+        <a href="products.html#product-section">Products</a>
+        <a href="reviews.html#review-section">Reviews</a>
+        <a href="contact us.html#contact-us-section">Contact Us</a>
+        <a href="login or register.html#login-or-register-section">Login/Register</a>        </nav>
+    </header>
+    <div class="review-form">
+        <h2>Leave a review for Hanzo Online Hardware Store</h2>
+        <form id="review-form">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <label for="rating">Rating:</label><br>
+          <div class="stars">
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+          </div><br>
+          <label for="review">Review:</label><br>
+          <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
+          <input type="submit" value="Submit Review">
+        </form>
+      </div>
+    
+</body>    

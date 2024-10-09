@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <style>
+        header {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            width: 85%;
+            padding: 10px 120px;
+            background: #11141a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 25px;
+            color: #eee01f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        nav a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        nav a:hover,
+        nav a.active {
+            color: #eee01f;
+        }
+        body {
+            font-family:'Times New Roman', Times, serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding-top: 50px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+            
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+            
+        }
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .section{
+            display: none;
+        } 
+        .product-section.active{
+            display:flex;
+            justify-content: space-between;
+               
+        }
+        .wood-container {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-left: 250px;
+        }
+        .wood-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .wood-type img {
+            width: 100%;
+            height: auto;
+        }
+        .wood-type h4 {
+            margin: 10px 0;
+        }
+        .wood-type p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .metal-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-left: 50px;
+        }
+        .metal-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .metal-type img {
+            width: 100%;
+            height: auto;
+            
+        }
+        .metal-type h4 {
+            margin: 10px 0;
+        }
+        .metal-type p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .plastic-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .plastic-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .plastic-type img {
+            width: 100%;
+            height: auto;
+        }
+        .plastic-type h4 {
+            margin: 10px 0;
+        }
+        .plastic-type p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .glass-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .glass-type{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .glass-type img {
+            width: 100%;
+            height: auto;
+        }
+        .glass-type h4{
+            margin: 10px 0;
+        }
+        .glass-type p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .stone-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .stone-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .stone-type img {
+            width: 100%;
+            height: auto;
+        }
+        .stone-type h4 {
+            margin: 10px 0;
+        }
+        .stone-type p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .cement-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+        .cement-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .cement-type img {
+            width: 100%;
+            height: auto;
+        }
+        .cement-type h4 {
+            margin: 10px 0;
+        }
+        .cement-type p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        #buy {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #buy:hover {
+            background-color: #34b33b;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Hanzo Online Hardware Store</a>
+        <nav>
+            <a href="index.html#home-section">Home</a>
+            <a href="about.html#about-section">About</a>
+            <a href="products.html#product-section">Products</a>
+            <a href="reviews.html#review-section">Reviews</a>
+            <a href="contact us.html#contact-us-section">Contact Us</a>
+            <a href="login or register.html#login-or-register-section">Login/Register</a>        </nav>
+        </header>
+    <div class="navbar">
+        
+        <a href="#" class="active" onclick="showSection('wood')">Wood</a>
+        <a href="#" onclick="showSection('metal')">Metal</a>
+        <a href="#" onclick="showSection('plastic')">Plastic</a>
+        <a href="#" onclick="showSection('glass')">Glass</a>
+        <a href="#" onclick="showSection('stone')">Stone</a>
+        <a href="#" onclick="showSection('cement')">Cement</a>
+    </div>
+    
+    
+    <div class="product-section wood section active">
+            <div class="wood-type" id="oak">
+                <img src="oak.jpg" alt="Oak">
+                <h4>Oak</h4>
+                <p>Oak is a hardwood that is strong and durable. It has a distinctive grain pattern and is often used for furniture and flooring.</p>
+                <p>Price: Ksh 2000 /board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+            </div>
+            <div class="wood-type" id="pine">
+                <img src="pine.jpg" alt="Pine">
+                <h4>Pine</h4>
+                <p>Pine is a softwood that is lightweight and easy to work with. It has a straight grain pattern and is often used for construction and cabinetry.</p>
+                <p>Price: Ksh 1000/board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form> 
+            </div>
+            <div class="wood-type" id="maple">
+                <img src="maple.jpg" alt="Maple">
+                <h4>Maple</h4>
+                <p>Maple is a hardwood that is dense and strong. It has a fine grain pattern and is often used for furniture and cabinetry.</p>
+                <p>Price: Ksh 2500/board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+            </div>
+            <div class="wood-type" id="mahogany">
+                <img src="mahogany.jpg" alt="Mahogany">
+                <h4>Mahogany</h4>
+                <p>Mahogany is a hardwood that is rich and luxurious. It has a straight grain pattern and is often used for furniture and cabinetry.</p>
+                <p>Price: Ksh 5000/board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+            </div>
+            <div class="wood-type" id="cedar">
+                <img src="cedar.jpg" alt="Cedar">
+                <h4>Cedar</h4>
+                <p>Cedar is a softwood that is aromatic and resistant to decay. It has a unique grain pattern and is often used for outdoor projects such as decking and fencing.</p>
+                <p>Price: Ksh 1500/board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+            </div>
+            <div class="wood-type" id="walnut">
+                <img src="walnut.jpg" alt="Walnut">
+                <h4>Walnut</h4>
+                <p>Walnut is a hardwood that is rich and dark. It has a straight or wavy grain pattern and is often used for furniture and cabinetry.</p>
+                <p>Price: Ksh 3000/board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+            </div>
+            <div class="wood-type" id="spruce">
+                <img src="spruce.jpg" alt="Spruce">
+                <h4>Spruce</h4>
+                <p>Spruce is a softwood that is lightweight and easy to work with. It has a straight grain pattern and is often used for construction and musical instruments.</p>
+                <p>Price: Ksh 800/board foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+                <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+            </div>
+        </div>
+    </div>
+   
+    <div class="product-section metal section active">
+        <div class="metal-type" id="steel">
+            <img src="steel.jpg" alt="Steel">
+            <h4>Steel</h4>
+            <p>Steel is a strong and durable metal that is resistant to corrosion. It is often used for construction, manufacturing, and automotive applications.</p>
+            <p>Price: Ksh 500/kg. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+        </div>
+        <div class="metal-type" id="aluminium">
+            <img src="aluminium.jpg" alt="Aluminium">
+            <h4>Aluminium</h4>
+            <p>Aluminium is a lightweight and corrosion-resistant metal that is easy to work with. It is often used for aerospace, automotive, and construction applications.</p>
+            <p>Price: Ksh 300/kg. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+        </div>
+        <div class="metal-type" id="iron">
+            <img src="iron.jpg" alt="Iron">
+            <h4>Iron</h4>
+            <p>Iron is a strong and heavy metal that is prone to rusting. It is often used for construction and manufacturing applications.</p>
+            <p>Price: Ksh 200/kg. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+        </div>
+        <div class="metal-type" id="copper">
+            <img src="copper.jpg" alt="Copper">
+            <h4>Copper</h4>
+            <p>Copper is a ductile and malleable metal that is a good conductor of electricity. It is often used for electrical wiring, plumbing, and roofing applications.</p>
+            <p>Price: Ksh 700/kg. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+        </div>
+
+    </div>
+
+    <div class="product-section plastic section active">
+        <div class="plastic-type" id="acrylic">
+            <img src="acrylic.jpg" alt="Acrylic">
+            <h4>Acrylic</h4>
+            <p>Acrylic is a transparent plastic that is stronger and lighter than glass. It is often used for signs, displays, and lighting applications.</p>
+            <p>Price: Ksh 1000/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+        </div>
+        <div class="plastic-type" id="composites">
+            <img src="composites.jpg" alt="Composites">
+            <h4>Composites</h4>
+            <p>Composites are plastics that are reinforced with fibers or particles to improve their strength and durability. They are often used for aerospace, automotive, and construction applications.</p>
+            <p>Price: Ksh 2000/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>
+        </div>
+        <div class="plastic-type" id="expanded-polystyrene">
+            <img src="expanded-polystyrene.jpg" alt="Expanded Polystyrene">
+            <h4>Expanded Polystyrene</h4>
+            <p>Expanded Polystyrene (EPS) is a lightweight and rigid foam plastic that is often used for insulation, packaging, and buoyancy applications.</p>
+            <p>Price: Ksh 500/cubic foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+        <div class="plastic-type" id="polycarbonate">
+            <img src="polycarbonate.jpg" alt="Polycarbonate">
+            <h4>Polycarbonate</h4>
+            <p>Polycarbonate is a transparent and impact-resistant plastic that is often used for safety glasses, lighting fixtures, and electronic devices.</p>
+            <p>Price: Ksh 1500/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>                  
+        </div>
+        <div class="plastic-type" id="polyethylene">
+            <img src="polyethylene.jpg" alt="Polyethylene">
+            <h4>Polyethylene</h4>
+            <p>Polyethylene is a versatile plastic that is available in different forms such as HDPE, LDPE, and LLDPE. It is often used for packaging, pipes, and containers.</p>
+            <p> Price: Ksh 1000/kg. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+    </div>
+   
+    <div class="product-section glass section active">
+        <div class="glass-type" id="floatglass">
+            <img src="float-glass.jpg" alt="Float Glass">
+            <h4>Float Glass</h4>
+            <p>Float glass is a type of glass that is produced by floating molten glass on a bed of molten tin. It is the most common type of glass used in windows and other architectural applications. It is available in different thicknesses and can be cut to size.</p>
+            <p>Price: Ksh 300/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+        <div class="glass-type" id="laminated-glass">
+            <img src="laminated-glass.jpg" alt="Laminated Glass">
+            <h4>Laminated Glass</h4>
+            <p>Laminated glass is a type of safety glass that is made by sandwiching a layer of plastic between two or more layers of glass. It is used in applications where there is a risk of human impact, such as in car windshields, skylights, and glass doors. It is also used in buildings to provide security and sound insulation.</p>
+            <p>Price: Ksh 500/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+        <div class="glass-type" id="shatterproof-glass">
+            <img src="shatterproof-glass.jpg" alt="Shatterproof Glass">
+            <h4>Shatterproof Glass</h4>
+            <p>Shatterproof glass, also known as tempered glass, is a type of safety glass that is treated with heat or chemicals to increase its strength and resistance to breakage. When it does break, it shatters into small, harmless pieces. It is used in applications where there is a risk of human impact, such as in car side windows, glass shower doors, and glass tables.</p>
+            <p>Price: Ksh 400/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+        <div class="glass-type" id="energy-efficient-glass">
+            <img src="energy-efficient-glass.jpg" alt="Energy-efficient Glass">
+            <h4>Energy-efficient Glass</h4>
+            <p>Energy-efficient glass, also known as low-e glass, is a type of glass that is coated with a thin layer of metal or metallic oxide. It reflects heat and UV rays, keeping the interior of a building cool in the summer and warm in the winter. It is used in windows, doors, and skylights to improve energy efficiency and reduce heating and cooling costs.</p>
+            <p>Price: Ksh 600/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+        <div class="glass-type" id="patterned-glass">
+            <img src="patterned-glass.jpg" alt="Patterned Glass">
+            <h4>Patterned Glass</h4>
+            <p>Patterned glass, also known as decorative glass, is a type of glass that has a pattern or design on one or both sides. It is used in applications where privacy and decoration are important, such as in bathrooms, doors, and partitions. It is available in different patterns and colors.</p>
+            <p>Price: Ksh 450/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+            <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+        </div>
+    </div>
+    <div class="product-section stone section active">
+        <div class="stone-type" id="quartzite">
+    <img src="quartzite.jpg" alt="Quartzite">
+    <h4>Quartzite</h4>
+    <p>Quartzite is a hard, non-foliated metamorphic rock which was originally sandstone. Through a process of high heating and pressurization, sandstone is converted into quartzite, as individual grains of sand recrystallize into quartz.</p>
+    <p>Price: Ksh 3000/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+    <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+  </div>
+  <div class="stone-type" id="basalt">
+    <img src="basalt.jpg" alt="Basalt">
+    <h4>Basalt</h4>
+    <p>Basalt is a mafic extrusive rock, the most widespread of all volcanic rocks. It is the rock most typical of large oceanic plateaus.</p>
+    <p>Price: Ksh 2500/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+    <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+  </div>
+  <div class="stone-type" id="limestone">
+    <img src="limestone.jpg" alt="Limestone">
+    <h4>Limestone</h4>
+    <p>Limestone is a sedimentary rock composed largely of the mineral calcite and comprising about 15% of the Earth's sedimentary crust. It is a basic building block of the construction industry (dimension stone) and a chief contributor to the global carbon cycle.</p>
+    <p>Price: Ksh 2000/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+    <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+  </div>
+  <div class="stone-type" id="marble">
+    <img src="marble.jpg" alt="Marble">
+    <h4>Marble</h4>
+    <p>Marble is a metamorphic rock composed of recrystallized carbonate minerals, most commonly calcite or dolomite. Marble is typically not foliated (it does not have a planar structure), but can be fractured.</p>
+    <p>Price: Ksh 4000/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+    <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+  </div>
+  <div class="stone-type" id="granite">
+    <img src="granite.jpg" alt="Granite">
+    <h4>Granite</h4>
+    <p>Granite is a common type of felsic intrusive igneous rock that is granular and phaneritic in texture. Granites can be predominantly white, pink, or gray in color, depending on their mineralogy.</p>
+    <p>Price: Ksh 3500/square foot. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+    <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+  </div>
+</div>
+<div class="product-section cement section active">
+    <div class="cement-type" id="portland-pozzolana-cement">
+      <img src="portland-pozzolana-cement.jpg" alt="Portland Pozzolana Cement">
+      <h4>Portland Pozzolana Cement</h4>
+      <p>Portland Pozzolana Cement is a type of hydraulic cement that is made by finely grinding together lime and a pozzolana such as volcanic ash or pumicite. It is used as a substitute for Portland cement in concrete and mortar, and has the advantage of producing less heat during hydration.</p>
+      <p>Price: Ksh 600/bag. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+      <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+    </div>
+    <div class="cement-type" id="rapid-hardening-cement">
+      <img src="rapid-hardening-cement.jpg" alt="Rapid Hardening Cement">
+      <h4>Rapid Hardening Cement</h4>
+      <p>Rapid Hardening Cement is a type of cement that is designed to set and harden quickly. It is often used in situations where time is of the essence, such as in cold weather or where early strength is required.</p>
+      <p>Price: Ksh 700/bag. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+      <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+    </div>
+    <div class="cement-type" id="extra-rapid-hardening-cement">
+      <img src="extra-rapid-hardening-cement.jpg" alt="Extra Rapid Hardening Cement">
+      <h4>Extra Rapid Hardening Cement</h4>
+      <p>Extra Rapid Hardening Cement is a type of cement that is designed to set and harden even faster than Rapid Hardening Cement. It is often used in situations where time is of the essence and early strength is required.</p>
+      <p>Price: Ksh 800/bag. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+      <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+    </div>
+    <div class="cement-type" id="quick-setting-cement">
+      <img src="quick-setting-cement.jpg" alt="Quick Setting Cement">
+      <h4>Quick Setting Cement</h4>
+      <p>Quick Setting Cement is a type of cement that is designed to set quickly, typically within 15 minutes. It is often used in situations where time is of the essence and where a fast setting time is required.</p>
+      <p>Price: Ksh 900/bag. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+      <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+    </div>
+    <div class="cement-type" id="low-heat-cement">
+      <img src="low-heat-cement.jpg" alt="Low Heat Cement">
+      <h4>Low Heat Cement</h4>
+      <p>Low Heat Cement is a type of cement that is designed to produce less heat during hydration than regular cement. It is often used in large construction projects where the heat generated by regular cement could cause problems.</p>
+      <p>Price: Ksh 500/bag. Truckloads are also available for additional cost. Contact us to arrange a truckload quote.</p>
+      <form action="payment.html"> <button type="submit" id="buy">BUY</button> </form>      
+    </div>
+  </div>
+ </div>
+    <script>
+        function showSection(section) {
+            const productSections = document.querySelectorAll('.product-section');
+            productSections.forEach((section) => {
+                section.classList.remove('active');
+            });
+            const activeSection = document.querySelector(`.product-section.${section}`);
+            activeSection.classList.add('active');
+            const navbarLinks = document.querySelectorAll('.navbar a');
+            navbarLinks.forEach((link) => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.querySelector(`.navbar a[onclick*='${section}']`);
+            activeLink.classList.add('active');
+        }
+    </script>
+</body>
+</html>

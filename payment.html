@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Page</title>
+<style>
+  body {
+  font-family:'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7d68f;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<h2>Payment Details</h2>
+<p>Please enter your contact details and the product you wish to purchase.
+  <br>
+  Once you have completed this form, the submit button
+</p>  
+
+<form id="paymentForm">
+  <label for="contact">Contact Details:</label>
+  <input type="text" id="contact" name="contact" placeholder="Email">  
+  <input type="text" id="product"  name="product" placeholder="Product's Name">  
+  <input type="text" id="amount" name="amount" placeholder="Amount in KSH">
+   <br>
+  <button type="submit">Submit Form</button>
+</form>
+
+<h2>Payment Instructions</h2>
+<p>Please make your payment to the following M-pesa account via Lipa na M-pesa 
+   <br>
+   Buy Goods and Services
+   <br>
+   N.O: 437965
+   <br>
+   Account Name: JKANJIRA
+   <br>
+   Payment Method: M-PESA 
+</p>
+<form id="m-pesareferencemessageForm">
+  <label for="reference message">Payment Confrimation Message From M-PESA:</label>
+  <input type="text" id="reference message" name="reference message" placeholder="Reference Message">
+   <br>
+  <button type="submit">Submit Payment Confirmation Message</button>
+
+<p>Once this process is complete you will receive a call from one of our customer service agents 
+  <br>
+   confirming and accepting your order. 
+</p>
+<script>
+  document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var contact = document.getElementById('contact').value;
+    
+    alert('Payment submitted. Your contact details are: ' + contact);
+  });
+</script>
+
+</body>
+</html>
